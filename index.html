@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f8f7f4">
+  <meta name="description" content="Explore the portfolio of Margi Patel, an aspiring computer engineer at Iowa State University.">
+  <title>Margi Patel | Computer Engineering Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root { --ink:#1e2925; --muted:#62716a; --green:#285b4b; --green-dark:#1b4539; --sage:#e6ede7; --cream:#f8f7f4; --line:#dce3dc; --white:#fff; }
+    * { box-sizing:border-box; }
+    html { scroll-behavior:smooth; scroll-padding-top:88px; }
+    body { margin:0; font-family:'DM Sans',Arial,sans-serif; background:var(--cream); color:var(--ink); line-height:1.65; }
+    a { color:inherit; }
+    img { display:block; max-width:100%; }
+    .wrap { width:min(1120px,calc(100% - 48px)); margin-inline:auto; }
+    .site-header { position:sticky; top:0; z-index:20; background:rgba(248,247,244,.94); border-bottom:1px solid var(--line); backdrop-filter:blur(15px); }
+    .nav { min-height:74px; display:flex; align-items:center; justify-content:space-between; gap:24px; }
+    .logo { text-decoration:none; font-weight:700; letter-spacing:-.04em; font-size:1.3rem; }
+    .logo span { color:var(--green); }
+    .nav-links { display:flex; align-items:center; flex-wrap:wrap; gap:clamp(18px,3.4vw,42px); }
+    .nav-links a { text-decoration:none; font-weight:600; font-size:.93rem; color:var(--muted); transition:color .2s; }
+    .nav-links a:hover,.nav-links a:focus-visible { color:var(--green); }
+    .nav-links .nav-contact { color:white; background:var(--green); padding:10px 18px; border-radius:40px; }
+    .nav-links .nav-contact:hover,.nav-links .nav-contact:focus-visible { color:white; background:var(--green-dark); }
+    section { padding:110px 0; }
+    .hero { padding:72px 0 95px; min-height:calc(100svh - 74px); display:flex; align-items:center; }
+    .hero-grid { display:grid; grid-template-columns:1.08fr .92fr; gap:clamp(42px,7vw,110px); align-items:center; }
+    .eyebrow { display:inline-flex; align-items:center; gap:11px; color:var(--green); text-transform:uppercase; letter-spacing:.19em; font-size:.76rem; font-weight:700; }
+    .eyebrow::before { content:""; width:24px; height:2px; background:currentColor; }
+    h1,h2,h3,p { margin-top:0; }
+    h1,h2 { font-family:'Playfair Display',Georgia,serif; font-weight:600; letter-spacing:-.045em; line-height:1.12; }
+    h1 { margin:23px 0 21px; font-size:clamp(4rem,8vw,7.6rem); }
+    h1 span { color:var(--green); }
+    .hero-subtitle { font-size:clamp(1.2rem,2vw,1.55rem); font-weight:600; margin-bottom:15px; }
+    .lead { color:var(--muted); max-width:540px; font-size:1.04rem; }
+    .actions { display:flex; gap:14px; flex-wrap:wrap; margin-top:34px; }
+    .btn { display:inline-flex; align-items:center; justify-content:center; gap:9px; text-decoration:none; padding:14px 24px; border-radius:6px; font-size:.94rem; font-weight:700; transition:transform .2s,background .2s; }
+    .btn:hover { transform:translateY(-2px); }
+    .btn-primary { color:white; background:var(--green); }
+    .btn-primary:hover { background:var(--green-dark); }
+    .btn-outline { border:1px solid var(--green); color:var(--green); }
+    .btn-outline:hover { background:var(--sage); }
+    .portrait-shell { position:relative; margin:12px 16px 12px 0; }
+    .portrait-shell::before { content:""; position:absolute; inset:18px -18px -18px 18px; background:#cddccf; border-radius:180px 180px 12px 12px; }
+    .portrait { position:relative; width:100%; height: min(590px,65vw); min-height:430px; object-fit:cover; object-position:center 37%; border-radius:180px 180px 12px 12px; box-shadow:0 20px 60px rgba(15,46,33,.1); }
+    .about { background:white; }
+    .section-intro { max-width:660px; margin-bottom:45px; }
+    h2 { font-size:clamp(2.8rem,5vw,4.25rem); margin:18px 0; }
+    .section-intro p { color:var(--muted); }
+    .about-grid { display:grid; grid-template-columns:1.05fr .95fr; gap:36px; }
+    .about-copy { padding:37px; border:1px solid var(--line); border-radius:14px; background:#fcfdfb; }
+    .about-copy p { color:#52615a; margin-bottom:18px; }
+    .about-copy p:last-child { margin-bottom:0; }
+    .details { display:grid; grid-template-rows:1fr 1fr; gap:18px; }
+    .detail-card { padding:30px 32px; background:var(--sage); border-radius:14px; }
+    .detail-card h3 { font-size:.85rem; text-transform:uppercase; letter-spacing:.14em; color:var(--green); margin-bottom:18px; }
+    .detail-card strong { display:block; font-size:1.1rem; line-height:1.45; }
+    .detail-card p { color:#55695f; margin:7px 0 0; font-size:.92rem; }
+    .skills { display:flex; gap:9px; flex-wrap:wrap; }
+    .skills span { background:#fff; border:1px solid #d0dbd2; padding:7px 12px; border-radius:6px; font-size:.85rem; font-weight:600; }
+    .resume { background:var(--cream); }
+    .resume-head { display:flex; justify-content:space-between; align-items:end; gap:25px; margin-bottom:32px; }
+    .resume-head h2 { margin-bottom:0; }
+    .resume-frame { background:white; border:1px solid var(--line); border-radius:14px; padding:clamp(10px,3vw,28px); box-shadow:0 16px 48px rgba(20,48,33,.06); max-width:850px; margin-inline:auto; }
+    .resume-frame img { width:100%; height:auto; }
+    .resume-note { text-align:center; color:var(--muted); font-size:.9rem; margin:22px 0 0; }
+    .resume-note a { color:var(--green); font-weight:700; }
+    footer { padding:32px 0; background:#1e332b; color:#e5eee8; }
+    .footer-inner { display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:12px; font-size:.9rem; }
+    .footer-inner p { margin:0; }
+    .footer-inner a { color:#e5eee8; text-decoration:none; }
+    .footer-inner a:hover { text-decoration:underline; }
+    :focus-visible { outline:3px solid #5a9784; outline-offset:4px; }
+    @media(max-width:780px) { .hero { min-height:auto; padding:60px 0 78px; } .hero-grid { grid-template-columns:1fr; } .hero-text { order:2; } .portrait-shell { order:1; max-width:480px; width:calc(100% - 18px); margin:0 auto 14px; } .portrait { height:480px; min-height:0; } .about-grid { grid-template-columns:1fr; } section { padding:76px 0; } .resume-head { align-items:start; flex-direction:column; } }
+    @media(max-width:520px) { .wrap { width:min(100% - 32px,1120px); } .nav { min-height:70px; gap:12px; } .logo { font-size:1.13rem; } .nav-links { gap:15px; } .nav-links a { font-size:.85rem; } .nav-links .nav-contact { display:none; } h1 { font-size:clamp(3.6rem,15vw,5rem); } .portrait { height:390px; } .about-copy,.detail-card { padding:23px; } .btn { padding:12px 17px; } }
+    @media(prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } .btn,.nav-links a { transition:none; } }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav wrap" aria-label="Main navigation">
+      <a class="logo" href="#home">Margi<span>.</span></a>
+      <div class="nav-links">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#resume">Resume</a>
+        <a class="nav-contact" href="mailto:margipatel1810@gmail.com">Contact me ↗</a>
+      </div>
+    </nav>
+  </header>
+  <main>
+    <section id="home" class="hero" aria-labelledby="home-heading">
+      <div class="wrap hero-grid">
+        <div class="hero-text">
+          <span class="eyebrow">Welcome to my portfolio</span>
+          <h1 id="home-heading">Hi, I'm<br><span>Margi Patel.</span></h1>
+          <p class="hero-subtitle">Aspiring Computer Engineer</p>
+          <p class="lead">Passionate about technology, creative problem-solving, and turning ideas into real-world solutions. Currently pursuing Computer Engineering at Iowa State University.</p>
+          <div class="actions"><a class="btn btn-primary" href="#about">Get to know me <span aria-hidden="true">↗</span></a><a class="btn btn-outline" href="#resume">View resume <span aria-hidden="true">↓</span></a></div>
+        </div>
+        <div class="portrait-shell"><img class="portrait" src="assets/margi-portrait.jpg" alt="Portrait of Margi Patel outdoors" fetchpriority="high"></div>
+      </div>
+    </section>
+    <section id="about" class="about" aria-labelledby="about-heading">
+      <div class="wrap">
+        <div class="section-intro"><span class="eyebrow">A little about me</span><h2 id="about-heading">Curious mind.<br>Engineer at heart.</h2><p>I'm always excited to learn, build, and grow through new technical challenges.</p></div>
+        <div class="about-grid">
+          <div class="about-copy">
+            <p>I'm a Computer Engineering student in a 2+2 program, with foundational studies completed at Nirma University and continued coursework at Iowa State University.</p>
+            <p>I'm interested in software development, artificial intelligence, machine learning, and finding practical ways to apply engineering concepts. I enjoy tackling problems, exploring new technologies, and gaining hands-on experience.</p>
+            <p>My internship experiences include web development at Techwe Innovation and AI/ML work at Concetto Labs, where I worked with web technologies, Python, and machine learning workflows.</p>
+          </div>
+          <div class="details">
+            <div class="detail-card"><h3>Education</h3><strong>Iowa State University</strong><p>Computer Engineering · 2026–2028</p><strong style="margin-top:15px">Nirma University</strong><p>Computer Science Engineering · 2024–2026</p></div>
+            <div class="detail-card"><h3>Technical interests & skills</h3><div class="skills"><span>C/C++</span><span>Python</span><span>Java / OOP</span><span>Data Structures</span><span>Algorithms</span><span>Web Development</span><span>AI / ML</span></div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="resume" class="resume" aria-labelledby="resume-heading">
+      <div class="wrap">
+        <div class="resume-head"><div><span class="eyebrow">Experience & background</span><h2 id="resume-heading">My Resume</h2></div><a class="btn btn-primary" href="assets/margi-resume.jpg" download="Margi_Patel_Resume.jpg">Download resume <span aria-hidden="true">↓</span></a></div>
+        <div class="resume-frame"><a href="assets/margi-resume.jpg" target="_blank" rel="noopener noreferrer" aria-label="Open Margi Patel resume image in a new tab"><img src="assets/margi-resume.jpg" alt="Margi Patel's resume listing education at Iowa State University and Nirma University, programming skills, internships at Techwe Innovation and Concetto Labs, and projects" loading="lazy"></a></div>
+        <p class="resume-note">Select the resume image to view it full size, or <a href="mailto:margipatel1810@gmail.com">reach out via email</a>.</p>
+      </div>
+    </section>
+  </main>
+  <footer><div class="wrap footer-inner"><p>© <span id="year">2026</span> Margi Patel. Made with care.</p><a href="mailto:margipatel1810@gmail.com">margipatel1810@gmail.com ↗</a></div></footer>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
